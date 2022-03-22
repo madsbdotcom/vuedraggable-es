@@ -1,0 +1,16 @@
+node_modules
+scripts
+src
+docs
+demo
+scripts
+jest.*
+.*
+coverage
+.gitignore
+public
+*.config.js
+jsconfig.json
+example
+tests
+documentation
