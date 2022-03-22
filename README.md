@@ -10,6 +10,14 @@
 [![npm version](https://img.shields.io/npm/v/vuedraggable/next.svg)](https://www.npmjs.com/package/vuedraggable/v/next)
 [![MIT License](https://img.shields.io/github/license/SortableJS/vue.draggable.next.svg)](https://github.com/SortableJS/vue.draggable.next/blob/master/LICENSE)
 
+### With npm or yarn 
+
+```bash
+yarn add vuedraggable-es // 改了个名字，esm模块
+
+npm i -S vuedraggable-es
+```
+
 
 Vue ESM component (Vue.js 3.0) allowing drag-and-drop and synchronization with view model array.
 
@@ -49,13 +57,7 @@ Find this project useful? You can buy me a :coffee: or a :beer:
 
 ## Installation
 
-### With npm or yarn 
 
-```bash
-yarn add vuedraggable-es
-
-npm i -S vuedraggable-es
-```
 
 ### with direct link 
 ```html
