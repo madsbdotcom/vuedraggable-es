@@ -11,7 +11,7 @@
 [![MIT License](https://img.shields.io/github/license/SortableJS/vue.draggable.next.svg)](https://github.com/SortableJS/vue.draggable.next/blob/master/LICENSE)
 
 
-Vue component (Vue.js 3.0) allowing drag-and-drop and synchronization with view model array.
+Vue ESM component (Vue.js 3.0) allowing drag-and-drop and synchronization with view model array.
 
 For Vue 2 and Vue 1 version check: https://github.com/SortableJS/Vue.Draggable
 
@@ -52,9 +52,9 @@ Find this project useful? You can buy me a :coffee: or a :beer:
 ### With npm or yarn 
 
 ```bash
-yarn add vuedraggable@next
+yarn add vuedraggable-es
 
-npm i -S vuedraggable@next
+npm i -S vuedraggable-es
 ```
 
 ### with direct link 
