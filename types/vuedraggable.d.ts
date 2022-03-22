@@ -34,8 +34,8 @@ declare const draggableComponent: import("vue").DefineComponent<{
 }, any, {
     error: boolean;
 }, {
-    realList(): any;
-    getKey(): any;
+    realList(): unknown[];
+    getKey(): Function;
 }, {
     getUnderlyingVm(domElement: any): any;
     getUnderlyingPotencialDraggableComponent(htmElement: any): any;
@@ -55,16 +55,41 @@ declare const draggableComponent: import("vue").DefineComponent<{
     computeFutureIndex(relatedContext: any, evt: any): any;
     onDragMove(evt: any, originalEvent: any): any;
     onDragEnd(): void;
-}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
-    move: Function;
-    clone: Function;
-    componentData: Record<string, any>;
-    tag: string;
-    list: unknown[];
-    modelValue: unknown[];
-} & {
-    itemKey?: string | Function;
-}>, {
+}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, string[], string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    list: {
+        type: ArrayConstructor;
+        required: boolean;
+        default: any;
+    };
+    modelValue: {
+        type: ArrayConstructor;
+        required: boolean;
+        default: any;
+    };
+    itemKey: {
+        type: (FunctionConstructor | StringConstructor)[];
+        required: boolean;
+    };
+    clone: {
+        type: FunctionConstructor;
+        default: (original: any) => any;
+    };
+    tag: {
+        type: StringConstructor;
+        default: string;
+    };
+    move: {
+        type: FunctionConstructor;
+        default: any;
+    };
+    componentData: {
+        type: ObjectConstructor;
+        required: boolean;
+        default: any;
+    };
+}>> & {
+    [x: string & `on${string}`]: (...args: any[]) => any;
+}, {
     move: Function;
     clone: Function;
     componentData: Record<string, any>;
