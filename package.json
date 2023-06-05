@@ -15,7 +15,7 @@
   "types": "types/vuedraggable.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SortableJS/Vue.Draggable.git"
+    "url": "https://github.com/madsbdotcom/vuedraggable-es.git"
   },
   "private": false,
   "scripts": {
@@ -43,37 +43,38 @@
     "sortablejs": "1.14.0"
   },
   "peerDependencies": {
-    "vue": "^3.2.31"
+    "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^2.1.0",
-    "@types/sortablejs": "^1.10.7",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-plugin-unit-jest": "^4.5.4",
-    "@vue/cli-service": "~4.5.0",
+    "@babel/eslint-parser": "^7.21.8",
+    "@rushstack/eslint-patch": "^1.3.0",
+    "@types/sortablejs": "^1.15.1",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-eslint": "^5.0.8",
+    "@vue/cli-plugin-unit-jest": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.0.0",
-    "@vue/eslint-config-prettier": "6.0.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/server-renderer": "^3.0.0",
-    "@vue/test-utils": "^2.0.0-beta.6",
+    "@vue/test-utils": "^2.3.2",
     "babel-core": "7.0.0-bridge.0",
-    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.6.0",
     "bootstrap": "^4.3.1",
     "codecov": "^3.2.0",
     "element-plus": "^1.0.1-alpha.12",
-    "eslint": "^6.7.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^7.0.0-0",
+    "eslint": "^8.42.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.14.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "popper.js": "^1.16.1",
-    "typescript": "^4.3.5",
-    "vue": "^3.2.31",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9",
     "vue-jest": "^5.0.0-alpha.5",
-    "vue-router": "^4.0.0-beta.13",
-    "vuex": "4.0.0-beta.4",
-    "vite": "^2.6.14"
+    "vue-router": "^4.2.2",
+    "vuex": "4.1.0"
   },
   "eslintConfig": {
     "root": true,
@@ -82,11 +83,13 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "@vue/prettier"
+      "@vue/eslint-config-prettier"
     ],
-    "rules": {},
+    "rules": {
+      "vue/multi-word-component-names": "off"
+    },
     "parserOptions": {
-      "parser": "babel-eslint"
+      "parser": "@babel/eslint-parser"
     }
   },
   "postcss": {
