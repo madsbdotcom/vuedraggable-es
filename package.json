@@ -3,13 +3,10 @@
   "version": "4.1.0",
   "description": "draggable component for vue",
   "license": "MIT",
+  "module": "dist/vuedraggable-es.es.js",
   "exports": {
     ".": {
-      "types": "./dist/src/index.d.ts",
-      "import": "./dist/vuedraggable.es.js"
-    },
-    "./dist/index.css": {
-      "import": "./dist/index.css"
+      "import": "./dist/vuedraggable-es.es.js"
     }
   },
   "types": "types/vuedraggable.d.ts",
@@ -108,6 +105,5 @@
     "dist/*.js",
     "types/*",
     "src/*"
-  ],
-  "module": "dist/vuedraggable-es.es.js"
+  ]
 }
