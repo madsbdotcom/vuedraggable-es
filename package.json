@@ -3,7 +3,15 @@
   "version": "4.1.0",
   "description": "draggable component for vue",
   "license": "MIT",
-  "main": "dist/vuedraggable.umd.min.js",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/vuedraggable.es.js"
+    },
+    "./dist/index.css": {
+      "import": "./dist/index.css"
+    }
+  },
   "types": "types/vuedraggable.d.ts",
   "repository": {
     "type": "git",
@@ -11,10 +19,9 @@
   },
   "private": false,
   "scripts": {
-    "build:lib": "vite build",
+    "build": "vite build",
     "serve": "vue-cli-service serve ./example/main.js --open --mode local",
     "build:doc": "vue-cli-service build ./example/main.js --dest docs --mode development",
-    "build": "vue-cli-service build --name vuedraggable --entry ./src/vuedraggable.js --target lib",
     "lint": "vue-cli-service lint src example",
     "prepublishOnly": "npm run build:doc && npm run build:type && vite build",
     "test:unit": "vue-cli-service test:unit --coverage",
@@ -99,5 +106,5 @@
     "types/*",
     "src/*"
   ],
-  "module": "dist/index.es.js"
+  "module": "dist/vuedraggable-es.es.js"
 }

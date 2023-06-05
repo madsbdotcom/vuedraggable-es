@@ -1,43 +1,35 @@
-import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import path, { resolve } from "path";
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { fileURLToPath, URL } from 'node:url'
 
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== 'production'
 
 const baseConfig = {
   plugins: [vue()],
   resolve: {
-    conditions: ["import", "require", "browser"]
+    conditions: ['import', 'require', 'browser'],
   },
   build: {
     minify: true,
     lib: {
-      entry: path.resolve(__dirname, "src/vuedraggable.js"),
-      name: "vuedraggable",
-      formats: ["es"],
-      fileName: format => `index.${format}.js`
+      entry: fileURLToPath(new URL('./src/vuedraggable.js', import.meta.url)),
+      name: 'vuedraggable-es',
+      formats: ['es'],
+      fileName: (format) => `vuedraggable-es.${format}.js`,
     },
     rollupOptions: {
-      // 确保外部化处理那些你不想打包进库的依赖
       external: [
-        "vue",
-        "sortablejs",
+        'vue',
+        // "sortablejs",
       ],
       output: {
-        // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
         globals: {
-          vue: "Vue"
-        }
+          vue: 'Vue',
+        },
       },
-      plugins: [
-        // terser({
-        //   compress: true
-        // })
-      ]
-    }
+    },
   },
-};
-
+}
 
 // https://vitejs.dev/config/
-export default defineConfig(baseConfig);
+export default defineConfig(baseConfig)
